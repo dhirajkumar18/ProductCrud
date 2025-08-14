@@ -1,0 +1,759 @@
+2025-08-14T22:16:37.154+05:30  INFO 17760 --- [ProductCrud] [main] c.d.p.P.ProductCrudApplication           : Starting ProductCrudApplication using Java 17.0.12 with PID 17760 (C:\Users\dhira\Downloads\pyramid_doc_download\ProductCrud\build\classes\java\main started by dhira in C:\Users\dhira\Downloads\pyramid_doc_download\ProductCrud)
+2025-08-14T22:16:37.165+05:30  INFO 17760 --- [ProductCrud] [main] c.d.p.P.ProductCrudApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-08-14T22:16:37.727+05:30  INFO 17760 --- [ProductCrud] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Cassandra repositories in DEFAULT mode.
+2025-08-14T22:16:37.775+05:30  INFO 17760 --- [ProductCrud] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 1 Cassandra repository interface.
+2025-08-14T22:16:38.019+05:30  INFO 17760 --- [ProductCrud] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive Cassandra repositories in DEFAULT mode.
+2025-08-14T22:16:38.034+05:30  INFO 17760 --- [ProductCrud] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Reactive Cassandra repository interfaces.
+2025-08-14T22:16:38.555+05:30  INFO 17760 --- [ProductCrud] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-08-14T22:16:38.573+05:30  INFO 17760 --- [ProductCrud] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-14T22:16:38.573+05:30  INFO 17760 --- [ProductCrud] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-14T22:16:38.655+05:30  INFO 17760 --- [ProductCrud] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-14T22:16:38.656+05:30  INFO 17760 --- [ProductCrud] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1417 ms
+2025-08-14T22:16:38.789+05:30  INFO 17760 --- [ProductCrud] [main] c.d.o.d.i.core.DefaultMavenCoordinates   : Apache Cassandra Java Driver (org.apache.cassandra:java-driver-core) version 4.19.0
+2025-08-14T22:16:39.333+05:30 DEBUG 17760 --- [ProductCrud] [main] c.d.o.d.internal.core.util.Reflection    : Could not load com.esri.core.geometry.ogc.OGCGeometry with loader null: java.lang.ClassNotFoundException: com.esri.core.geometry.ogc.OGCGeometry
+
+java.lang.ClassNotFoundException: com.esri.core.geometry.ogc.OGCGeometry
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:375) ~[na:na]
+	at com.datastax.oss.driver.internal.core.util.Reflection.loadClass(Reflection.java:59) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at com.datastax.oss.driver.internal.core.util.DefaultDependencyChecker.lambda$isPresent$0(DefaultDependencyChecker.java:50) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708) ~[na:na]
+	at com.datastax.oss.driver.internal.core.util.DefaultDependencyChecker.isPresent(DefaultDependencyChecker.java:43) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at com.datastax.dse.driver.internal.core.type.codec.DseTypeCodecsRegistrar.registerDseCodecs(DseTypeCodecsRegistrar.java:34) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at com.datastax.oss.driver.internal.core.context.DefaultDriverContext.buildCodecRegistry(DefaultDriverContext.java:525) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at com.datastax.oss.driver.internal.core.context.DefaultDriverContext.<init>(DefaultDriverContext.java:262) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at com.datastax.oss.driver.api.core.session.SessionBuilder.buildContext(SessionBuilder.java:970) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at com.datastax.oss.driver.api.core.session.SessionBuilder.buildDefaultSessionAsync(SessionBuilder.java:906) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at com.datastax.oss.driver.api.core.session.SessionBuilder.buildAsync(SessionBuilder.java:819) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at com.datastax.oss.driver.api.core.session.SessionBuilder.build(SessionBuilder.java:837) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at org.springframework.boot.autoconfigure.cassandra.CassandraAutoConfiguration.cassandraSession(CassandraAutoConfiguration.java:107) ~[spring-boot-autoconfigure-3.5.4.jar:3.5.4]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:172) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:89) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:169) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1745) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.context.annotation.ContextAnnotationAutowireCandidateResolver$LazyDependencyTargetSource.getTarget(ContextAnnotationAutowireCandidateResolver.java:141) ~[spring-context-6.2.9.jar:6.2.9]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:203) ~[spring-aop-6.2.9.jar:6.2.9]
+	at jdk.proxy2/jdk.proxy2.$Proxy59.getContext(Unknown Source) ~[na:na]
+	at org.springframework.boot.autoconfigure.data.cassandra.CassandraDataAutoConfiguration.lambda$cassandraConverter$0(CassandraDataAutoConfiguration.java:102) ~[spring-boot-autoconfigure-3.5.4.jar:3.5.4]
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:135) ~[spring-data-commons-3.5.2.jar:3.5.2]
+	at org.springframework.data.util.Lazy.get(Lazy.java:113) ~[spring-data-commons-3.5.2.jar:3.5.2]
+	at org.springframework.data.cassandra.core.convert.MappingCassandraConverter.getCodecRegistry(MappingCassandraConverter.java:278) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.convert.DefaultColumnTypeResolver.getCodecRegistry(DefaultColumnTypeResolver.java:496) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.convert.DefaultColumnTypeResolver.tryResolve(DefaultColumnTypeResolver.java:249) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.convert.DefaultColumnTypeResolver.createCassandraTypeDescriptor(DefaultColumnTypeResolver.java:477) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.convert.DefaultColumnTypeResolver.lambda$resolve$1(DefaultColumnTypeResolver.java:230) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at java.base/java.util.Optional.orElseGet(Optional.java:364) ~[na:na]
+	at org.springframework.data.cassandra.core.convert.DefaultColumnTypeResolver.resolve(DefaultColumnTypeResolver.java:229) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.convert.DefaultColumnTypeResolver.doResolve(DefaultColumnTypeResolver.java:175) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.convert.DefaultColumnTypeResolver.resolve(DefaultColumnTypeResolver.java:112) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.convert.SchemaFactory.getDataType(SchemaFactory.java:199) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.convert.SchemaFactory.getCreateTableSpecificationFor(SchemaFactory.java:175) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.convert.SchemaFactory.getCreateTableSpecificationFor(SchemaFactory.java:127) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.CassandraPersistentEntitySchemaCreator.lambda$createTableSpecifications$1(CassandraPersistentEntitySchemaCreator.java:112) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.concurrent.ConcurrentHashMap$KeySpliterator.forEachRemaining(ConcurrentHashMap.java:3573) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682) ~[na:na]
+	at org.springframework.data.cassandra.core.CassandraPersistentEntitySchemaCreator.createTableSpecifications(CassandraPersistentEntitySchemaCreator.java:114) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.CassandraPersistentEntitySchemaCreator.createTables(CassandraPersistentEntitySchemaCreator.java:97) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.config.SessionFactoryFactoryBean.performSchemaActions(SessionFactoryFactoryBean.java:267) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.config.SessionFactoryFactoryBean.createTables(SessionFactoryFactoryBean.java:238) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.config.SessionFactoryFactoryBean.performSchemaAction(SessionFactoryFactoryBean.java:224) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.config.SessionFactoryFactoryBean.lambda$afterPropertiesSet$0(SessionFactoryFactoryBean.java:157) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.config.SchemaUtils.withAsyncSchemaRefresh(SchemaUtils.java:96) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.config.SchemaUtils.withSchemaRefresh(SchemaUtils.java:84) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.config.SessionFactoryFactoryBean.afterPropertiesSet(SessionFactoryFactoryBean.java:163) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1745) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1683) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1725) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1474) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1683) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1459) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1683) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1459) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1222) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1188) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1123) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.9.jar:6.2.9]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.9.jar:6.2.9]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.4.jar:3.5.4]
+	at com.dhiraj.product.ProductCrud.ProductCrudApplication.main(ProductCrudApplication.java:14) ~[main/:na]
+
+2025-08-14T22:16:39.348+05:30 DEBUG 17760 --- [ProductCrud] [main] c.d.o.d.i.core.session.DefaultSession    : Creating new session s0 (1 live instances)
+2025-08-14T22:16:39.511+05:30 DEBUG 17760 --- [ProductCrud] [main] c.d.o.d.internal.core.util.Reflection    : Creating a ReconnectionPolicy from config option advanced.reconnection-policy.class
+2025-08-14T22:16:39.512+05:30 DEBUG 17760 --- [ProductCrud] [main] c.d.o.d.internal.core.util.Reflection    : Building from unqualified name ExponentialReconnectionPolicy
+2025-08-14T22:16:39.513+05:30 DEBUG 17760 --- [ProductCrud] [main] c.d.o.d.internal.core.util.Reflection    : Trying with default package com.datastax.oss.driver.internal.core.connection.ExponentialReconnectionPolicy
+2025-08-14T22:16:39.526+05:30 DEBUG 17760 --- [ProductCrud] [main] c.d.o.d.internal.core.context.EventBus   : [s0] Registering com.datastax.oss.driver.internal.core.util.concurrent.RunOrSchedule$$Lambda$1128/0x00000282bb4b5940@113f9078 for class com.datastax.oss.driver.internal.core.metadata.DistanceEvent
+2025-08-14T22:16:39.527+05:30 DEBUG 17760 --- [ProductCrud] [main] c.d.o.d.internal.core.context.EventBus   : [s0] Registering com.datastax.oss.driver.internal.core.util.concurrent.RunOrSchedule$$Lambda$1128/0x00000282bb4b5940@7e52a26b for class com.datastax.oss.driver.internal.core.metadata.NodeStateEvent
+2025-08-14T22:16:39.529+05:30 DEBUG 17760 --- [ProductCrud] [main] .d.o.d.i.c.m.s.q.RuleBasedKeyspaceFilter : [s0] No server-side filtering
+2025-08-14T22:16:39.529+05:30 DEBUG 17760 --- [ProductCrud] [main] c.d.o.d.internal.core.context.EventBus   : [s0] Registering com.datastax.oss.driver.internal.core.metadata.MetadataManager$$Lambda$1132/0x00000282bb4b6a88@50211483 for class com.datastax.oss.driver.internal.core.config.ConfigChangeEvent
+2025-08-14T22:16:39.530+05:30 DEBUG 17760 --- [ProductCrud] [main] c.d.o.d.internal.core.context.EventBus   : [s0] Registering com.datastax.oss.driver.internal.core.util.concurrent.RunOrSchedule$$Lambda$1128/0x00000282bb4b5940@191c6e13 for class com.datastax.oss.driver.internal.core.channel.ChannelEvent
+2025-08-14T22:16:39.531+05:30 DEBUG 17760 --- [ProductCrud] [main] c.d.o.d.internal.core.context.EventBus   : [s0] Registering com.datastax.oss.driver.internal.core.util.concurrent.RunOrSchedule$$Lambda$1128/0x00000282bb4b5940@57bd6a8f for class com.datastax.oss.driver.internal.core.metadata.TopologyEvent
+2025-08-14T22:16:39.534+05:30 DEBUG 17760 --- [ProductCrud] [main] c.d.o.d.internal.core.context.EventBus   : [s0] Registering com.datastax.oss.driver.internal.core.util.concurrent.RunOrSchedule$$Lambda$1128/0x00000282bb4b5940@4f081b5d for class com.datastax.oss.driver.internal.core.metadata.schema.events.AggregateChangeEvent
+2025-08-14T22:16:39.536+05:30 DEBUG 17760 --- [ProductCrud] [main] c.d.o.d.internal.core.context.EventBus   : [s0] Registering com.datastax.oss.driver.internal.core.util.concurrent.RunOrSchedule$$Lambda$1128/0x00000282bb4b5940@5b2b8d86 for class com.datastax.oss.driver.internal.core.metadata.schema.events.FunctionChangeEvent
+2025-08-14T22:16:39.537+05:30 DEBUG 17760 --- [ProductCrud] [main] c.d.o.d.internal.core.context.EventBus   : [s0] Registering com.datastax.oss.driver.internal.core.util.concurrent.RunOrSchedule$$Lambda$1128/0x00000282bb4b5940@19827608 for class com.datastax.oss.driver.internal.core.metadata.schema.events.KeyspaceChangeEvent
+2025-08-14T22:16:39.538+05:30 DEBUG 17760 --- [ProductCrud] [main] c.d.o.d.internal.core.context.EventBus   : [s0] Registering com.datastax.oss.driver.internal.core.util.concurrent.RunOrSchedule$$Lambda$1128/0x00000282bb4b5940@450f0235 for class com.datastax.oss.driver.internal.core.metadata.schema.events.TableChangeEvent
+2025-08-14T22:16:39.539+05:30 DEBUG 17760 --- [ProductCrud] [main] c.d.o.d.internal.core.context.EventBus   : [s0] Registering com.datastax.oss.driver.internal.core.util.concurrent.RunOrSchedule$$Lambda$1128/0x00000282bb4b5940@64021427 for class com.datastax.oss.driver.internal.core.metadata.schema.events.TypeChangeEvent
+2025-08-14T22:16:39.539+05:30 DEBUG 17760 --- [ProductCrud] [main] c.d.o.d.internal.core.context.EventBus   : [s0] Registering com.datastax.oss.driver.internal.core.util.concurrent.RunOrSchedule$$Lambda$1128/0x00000282bb4b5940@357c9bd9 for class com.datastax.oss.driver.internal.core.metadata.schema.events.ViewChangeEvent
+2025-08-14T22:16:39.540+05:30 DEBUG 17760 --- [ProductCrud] [main] c.d.o.d.internal.core.context.EventBus   : [s0] Registering com.datastax.oss.driver.internal.core.util.concurrent.RunOrSchedule$$Lambda$1128/0x00000282bb4b5940@6d0290d8 for class com.datastax.oss.driver.internal.core.metadata.NodeStateEvent
+2025-08-14T22:16:39.548+05:30  INFO 17760 --- [ProductCrud] [main] c.d.o.d.i.c.c.CqlPrepareAsyncProcessor   : Adding handler to invalidate cached prepared statements on type changes
+2025-08-14T22:16:39.548+05:30 DEBUG 17760 --- [ProductCrud] [main] c.d.o.d.internal.core.context.EventBus   : [s0] Registering com.datastax.oss.driver.internal.core.util.concurrent.RunOrSchedule$$Lambda$1128/0x00000282bb4b5940@29962b2f for class com.datastax.oss.driver.internal.core.metadata.schema.events.TypeChangeEvent
+2025-08-14T22:16:39.551+05:30 DEBUG 17760 --- [ProductCrud] [main] c.d.o.d.internal.core.util.Reflection    : Could not load org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversal with loader null: java.lang.ClassNotFoundException: org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversal
+
+java.lang.ClassNotFoundException: org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversal
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:375) ~[na:na]
+	at com.datastax.oss.driver.internal.core.util.Reflection.loadClass(Reflection.java:59) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at com.datastax.oss.driver.internal.core.util.DefaultDependencyChecker.lambda$isPresent$0(DefaultDependencyChecker.java:50) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708) ~[na:na]
+	at com.datastax.oss.driver.internal.core.util.DefaultDependencyChecker.isPresent(DefaultDependencyChecker.java:43) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at com.datastax.oss.driver.internal.core.session.BuiltInRequestProcessors.createDefaultProcessors(BuiltInRequestProcessors.java:50) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at com.datastax.oss.driver.internal.core.context.DefaultDriverContext.buildRequestProcessorRegistry(DefaultDriverContext.java:514) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at com.datastax.oss.driver.internal.core.util.concurrent.LazyReference.get(LazyReference.java:57) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at com.datastax.oss.driver.internal.core.context.DefaultDriverContext.getRequestProcessorRegistry(DefaultDriverContext.java:907) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.<init>(DefaultSession.java:125) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.init(DefaultSession.java:92) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at com.datastax.oss.driver.api.core.session.SessionBuilder.buildDefaultSessionAsync(SessionBuilder.java:905) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at com.datastax.oss.driver.api.core.session.SessionBuilder.buildAsync(SessionBuilder.java:819) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at com.datastax.oss.driver.api.core.session.SessionBuilder.build(SessionBuilder.java:837) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at org.springframework.boot.autoconfigure.cassandra.CassandraAutoConfiguration.cassandraSession(CassandraAutoConfiguration.java:107) ~[spring-boot-autoconfigure-3.5.4.jar:3.5.4]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:172) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:89) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:169) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1745) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.context.annotation.ContextAnnotationAutowireCandidateResolver$LazyDependencyTargetSource.getTarget(ContextAnnotationAutowireCandidateResolver.java:141) ~[spring-context-6.2.9.jar:6.2.9]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:203) ~[spring-aop-6.2.9.jar:6.2.9]
+	at jdk.proxy2/jdk.proxy2.$Proxy59.getContext(Unknown Source) ~[na:na]
+	at org.springframework.boot.autoconfigure.data.cassandra.CassandraDataAutoConfiguration.lambda$cassandraConverter$0(CassandraDataAutoConfiguration.java:102) ~[spring-boot-autoconfigure-3.5.4.jar:3.5.4]
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:135) ~[spring-data-commons-3.5.2.jar:3.5.2]
+	at org.springframework.data.util.Lazy.get(Lazy.java:113) ~[spring-data-commons-3.5.2.jar:3.5.2]
+	at org.springframework.data.cassandra.core.convert.MappingCassandraConverter.getCodecRegistry(MappingCassandraConverter.java:278) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.convert.DefaultColumnTypeResolver.getCodecRegistry(DefaultColumnTypeResolver.java:496) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.convert.DefaultColumnTypeResolver.tryResolve(DefaultColumnTypeResolver.java:249) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.convert.DefaultColumnTypeResolver.createCassandraTypeDescriptor(DefaultColumnTypeResolver.java:477) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.convert.DefaultColumnTypeResolver.lambda$resolve$1(DefaultColumnTypeResolver.java:230) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at java.base/java.util.Optional.orElseGet(Optional.java:364) ~[na:na]
+	at org.springframework.data.cassandra.core.convert.DefaultColumnTypeResolver.resolve(DefaultColumnTypeResolver.java:229) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.convert.DefaultColumnTypeResolver.doResolve(DefaultColumnTypeResolver.java:175) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.convert.DefaultColumnTypeResolver.resolve(DefaultColumnTypeResolver.java:112) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.convert.SchemaFactory.getDataType(SchemaFactory.java:199) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.convert.SchemaFactory.getCreateTableSpecificationFor(SchemaFactory.java:175) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.convert.SchemaFactory.getCreateTableSpecificationFor(SchemaFactory.java:127) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.CassandraPersistentEntitySchemaCreator.lambda$createTableSpecifications$1(CassandraPersistentEntitySchemaCreator.java:112) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.concurrent.ConcurrentHashMap$KeySpliterator.forEachRemaining(ConcurrentHashMap.java:3573) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682) ~[na:na]
+	at org.springframework.data.cassandra.core.CassandraPersistentEntitySchemaCreator.createTableSpecifications(CassandraPersistentEntitySchemaCreator.java:114) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.CassandraPersistentEntitySchemaCreator.createTables(CassandraPersistentEntitySchemaCreator.java:97) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.config.SessionFactoryFactoryBean.performSchemaActions(SessionFactoryFactoryBean.java:267) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.config.SessionFactoryFactoryBean.createTables(SessionFactoryFactoryBean.java:238) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.config.SessionFactoryFactoryBean.performSchemaAction(SessionFactoryFactoryBean.java:224) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.config.SessionFactoryFactoryBean.lambda$afterPropertiesSet$0(SessionFactoryFactoryBean.java:157) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.config.SchemaUtils.withAsyncSchemaRefresh(SchemaUtils.java:96) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.config.SchemaUtils.withSchemaRefresh(SchemaUtils.java:84) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.config.SessionFactoryFactoryBean.afterPropertiesSet(SessionFactoryFactoryBean.java:163) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1745) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1683) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1725) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1474) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1683) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1459) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1683) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1459) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1222) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1188) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1123) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.9.jar:6.2.9]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.9.jar:6.2.9]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.4.jar:3.5.4]
+	at com.dhiraj.product.ProductCrud.ProductCrudApplication.main(ProductCrudApplication.java:14) ~[main/:na]
+
+2025-08-14T22:16:39.561+05:30 DEBUG 17760 --- [ProductCrud] [main] c.d.o.d.i.c.s.BuiltInRequestProcessors   : Tinkerpop was not found on the classpath: graph extensions will not be available
+2025-08-14T22:16:39.568+05:30 DEBUG 17760 --- [ProductCrud] [main] c.d.o.d.internal.core.context.EventBus   : [s0] Registering com.datastax.oss.driver.internal.core.util.concurrent.RunOrSchedule$$Lambda$1128/0x00000282bb4b5940@3b435211 for class com.datastax.oss.driver.internal.core.metadata.DistanceEvent
+2025-08-14T22:16:39.569+05:30 DEBUG 17760 --- [ProductCrud] [main] c.d.o.d.internal.core.context.EventBus   : [s0] Registering com.datastax.oss.driver.internal.core.util.concurrent.RunOrSchedule$$Lambda$1128/0x00000282bb4b5940@58a765ce for class com.datastax.oss.driver.internal.core.metadata.NodeStateEvent
+2025-08-14T22:16:39.569+05:30 DEBUG 17760 --- [ProductCrud] [main] c.d.o.d.internal.core.context.EventBus   : [s0] Registering com.datastax.oss.driver.internal.core.util.concurrent.RunOrSchedule$$Lambda$1128/0x00000282bb4b5940@6b162ecc for class com.datastax.oss.driver.internal.core.metadata.TopologyEvent
+2025-08-14T22:16:39.570+05:30 DEBUG 17760 --- [ProductCrud] [main] c.d.o.d.i.core.session.PoolManager       : [s0] Prepared statements cache configured to use weak values
+2025-08-14T22:16:39.580+05:30 DEBUG 17760 --- [ProductCrud] [main] c.d.o.d.internal.core.util.Reflection    : Creating a MetricsFactory from config option advanced.metrics.factory.class
+2025-08-14T22:16:39.581+05:30 DEBUG 17760 --- [ProductCrud] [main] c.d.o.d.internal.core.util.Reflection    : Building from unqualified name DefaultMetricsFactory
+2025-08-14T22:16:39.581+05:30 DEBUG 17760 --- [ProductCrud] [main] c.d.o.d.internal.core.util.Reflection    : Trying with default package com.datastax.oss.driver.internal.core.metrics.DefaultMetricsFactory
+2025-08-14T22:16:39.588+05:30 DEBUG 17760 --- [ProductCrud] [main] c.d.o.d.i.c.m.DropwizardMetricsFactory   : [s0] All metrics are disabled, Session.getMetrics will be empty
+2025-08-14T22:16:39.589+05:30 DEBUG 17760 --- [ProductCrud] [main] c.d.o.d.i.c.m.DefaultMetricsFactory      : [s0] Using DropwizardMetricsFactory
+2025-08-14T22:16:39.592+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-0] c.d.o.d.i.core.session.DefaultSession    : [s0] Starting initialization
+2025-08-14T22:16:39.603+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-0] c.d.o.d.internal.core.util.Reflection    : Creating a LoadBalancingPolicy from config option basic.load-balancing-policy.class
+2025-08-14T22:16:39.603+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-0] c.d.o.d.internal.core.util.Reflection    : Building from unqualified name DefaultLoadBalancingPolicy
+2025-08-14T22:16:39.603+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-0] c.d.o.d.internal.core.util.Reflection    : Trying with default package com.datastax.oss.driver.internal.core.loadbalancing.DefaultLoadBalancingPolicy
+2025-08-14T22:16:39.609+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-0] c.d.o.d.internal.core.util.Reflection    : Creating a RetryPolicy from config option advanced.retry-policy.class
+2025-08-14T22:16:39.609+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-0] c.d.o.d.internal.core.util.Reflection    : Building from unqualified name DefaultRetryPolicy
+2025-08-14T22:16:39.609+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-0] c.d.o.d.internal.core.util.Reflection    : Trying with default package com.datastax.oss.driver.internal.core.retry.DefaultRetryPolicy
+2025-08-14T22:16:39.611+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-0] c.d.o.d.internal.core.util.Reflection    : Creating a SpeculativeExecutionPolicy from config option advanced.speculative-execution-policy.class
+2025-08-14T22:16:39.611+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-0] c.d.o.d.internal.core.util.Reflection    : Building from unqualified name NoSpeculativeExecutionPolicy
+2025-08-14T22:16:39.611+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-0] c.d.o.d.internal.core.util.Reflection    : Trying with default package com.datastax.oss.driver.internal.core.specex.NoSpeculativeExecutionPolicy
+2025-08-14T22:16:39.612+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-0] c.d.o.d.internal.core.util.Reflection    : Creating a AddressTranslator from config option advanced.address-translator.class
+2025-08-14T22:16:39.612+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-0] c.d.o.d.internal.core.util.Reflection    : Building from unqualified name PassThroughAddressTranslator
+2025-08-14T22:16:39.612+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-0] c.d.o.d.internal.core.util.Reflection    : Trying with default package com.datastax.oss.driver.internal.core.addresstranslation.PassThroughAddressTranslator
+2025-08-14T22:16:39.614+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-0] c.d.o.d.internal.core.util.Reflection    : Creating a RequestThrottler from config option advanced.throttler.class
+2025-08-14T22:16:39.614+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-0] c.d.o.d.internal.core.util.Reflection    : Building from unqualified name PassThroughRequestThrottler
+2025-08-14T22:16:39.615+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-0] c.d.o.d.internal.core.util.Reflection    : Trying with default package com.datastax.oss.driver.internal.core.session.throttling.PassThroughRequestThrottler
+2025-08-14T22:16:39.616+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-0] c.d.o.d.internal.core.util.Reflection    : Creating a AuthProvider from config option advanced.auth-provider.class
+2025-08-14T22:16:39.617+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-0] c.d.o.d.internal.core.util.Reflection    : Option is not defined, skipping
+2025-08-14T22:16:39.617+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-0] c.d.o.d.internal.core.util.Reflection    : Creating a SslEngineFactory from config option advanced.ssl-engine-factory.class
+2025-08-14T22:16:39.617+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-0] c.d.o.d.internal.core.util.Reflection    : Option is not defined, skipping
+2025-08-14T22:16:39.619+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-0] c.d.o.d.internal.core.util.Reflection    : Creating a TimestampGenerator from config option advanced.timestamp-generator.class
+2025-08-14T22:16:39.620+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-0] c.d.o.d.internal.core.util.Reflection    : Building from unqualified name AtomicTimestampGenerator
+2025-08-14T22:16:39.620+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-0] c.d.o.d.internal.core.util.Reflection    : Trying with default package com.datastax.oss.driver.internal.core.time.AtomicTimestampGenerator
+2025-08-14T22:16:39.983+05:30  INFO 17760 --- [ProductCrud] [s0-admin-0] c.d.oss.driver.internal.core.time.Clock  : Using native clock for microsecond precision
+2025-08-14T22:16:39.987+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-0] c.d.o.d.i.core.metadata.MetadataManager  : [s0] Adding initial contact points [Node(endPoint=/172.30.37.96:9042, hostId=null, hashCode=463b44c)]
+2025-08-14T22:16:39.990+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-1] c.d.o.d.i.c.control.ControlConnection    : [s0] Initializing with event types [SCHEMA_CHANGE, STATUS_CHANGE, TOPOLOGY_CHANGE]
+2025-08-14T22:16:39.993+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-1] c.d.o.d.internal.core.context.EventBus   : [s0] Registering com.datastax.oss.driver.internal.core.metadata.LoadBalancingPolicyWrapper$$Lambda$1177/0x00000282bb51fb38@733d66f2 for class com.datastax.oss.driver.internal.core.metadata.NodeStateEvent
+2025-08-14T22:16:39.996+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-1] c.d.o.d.i.c.control.ControlConnection    : [s0] Trying to establish a connection to Node(endPoint=/172.30.37.96:9042, hostId=null, hashCode=463b44c)
+2025-08-14T22:16:45.238+05:30 DEBUG 17760 --- [ProductCrud] [s0-io-0] c.d.o.d.i.c.channel.ProtocolInitHandler  : [s0|control|connecting...] Starting channel initialization
+2025-08-14T22:16:45.272+05:30  WARN 17760 --- [ProductCrud] [s0-admin-1] c.d.o.d.i.c.control.ControlConnection    : [s0] Error connecting to Node(endPoint=/172.30.37.96:9042, hostId=null, hashCode=463b44c), trying next node
+
+com.datastax.oss.driver.api.core.connection.ConnectionInitException: [s0|control|connecting...] Protocol initialization request, step 1 (OPTIONS): failed to send request (java.nio.channels.NotYetConnectedException)
+	at com.datastax.oss.driver.internal.core.channel.ProtocolInitHandler$InitRequest.fail(ProtocolInitHandler.java:358) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at com.datastax.oss.driver.internal.core.channel.ChannelHandlerRequest.writeListener(ChannelHandlerRequest.java:89) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:603) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:570) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:505) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.DefaultPromise.addListener(DefaultPromise.java:198) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.channel.DefaultChannelPromise.addListener(DefaultChannelPromise.java:95) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.channel.DefaultChannelPromise.addListener(DefaultChannelPromise.java:30) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+	at com.datastax.oss.driver.internal.core.channel.ChannelHandlerRequest.send(ChannelHandlerRequest.java:78) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at com.datastax.oss.driver.internal.core.channel.ProtocolInitHandler$InitRequest.send(ProtocolInitHandler.java:195) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at com.datastax.oss.driver.internal.core.channel.ProtocolInitHandler.onRealConnect(ProtocolInitHandler.java:126) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at com.datastax.oss.driver.internal.core.channel.ConnectInitHandler.lambda$connect$0(ConnectInitHandler.java:59) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:603) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:596) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:572) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:505) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:649) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:642) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:131) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:264) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:156) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+	Suppressed: io.netty.channel.ConnectTimeoutException: connection timed out after 5000 ms: /172.30.37.96:9042
+		at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:263) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+		... 10 common frames omitted
+Caused by: java.nio.channels.NotYetConnectedException: null
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.flush0(AbstractChannel.java:916) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.flush0(AbstractNioChannel.java:359) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.flush(AbstractChannel.java:893) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.flush(DefaultChannelPipeline.java:1319) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:935) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:921) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:907) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.channel.ChannelDuplexHandler.flush(ChannelDuplexHandler.java:127) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:937) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeWriteAndFlush(AbstractChannelHandlerContext.java:957) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.write(AbstractChannelHandlerContext.java:982) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:950) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:1000) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.channel.DefaultChannelPipeline.writeAndFlush(DefaultChannelPipeline.java:974) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.channel.AbstractChannel.writeAndFlush(AbstractChannel.java:305) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+	at com.datastax.oss.driver.internal.core.channel.ChannelHandlerRequest.send(ChannelHandlerRequest.java:77) ~[java-driver-core-4.19.0.jar:4.19.0]
+	... 21 common frames omitted
+
+2025-08-14T22:16:45.275+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-1] c.d.o.d.internal.core.context.EventBus   : [s0] Firing an instance of class com.datastax.oss.driver.internal.core.channel.ChannelEvent: ChannelEvent(CONTROL_CONNECTION_FAILED, Node(endPoint=/172.30.37.96:9042, hostId=null, hashCode=463b44c))
+2025-08-14T22:16:45.277+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-1] c.d.o.d.internal.core.context.EventBus   : [s0] Notifying com.datastax.oss.driver.internal.core.util.concurrent.RunOrSchedule$$Lambda$1128/0x00000282bb4b5940@191c6e13 of ChannelEvent(CONTROL_CONNECTION_FAILED, Node(endPoint=/172.30.37.96:9042, hostId=null, hashCode=463b44c))
+2025-08-14T22:16:45.278+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-1] c.d.o.d.i.c.metadata.NodeStateManager    : [s0] Processing ChannelEvent(CONTROL_CONNECTION_FAILED, Node(endPoint=/172.30.37.96:9042, hostId=null, hashCode=463b44c))
+2025-08-14T22:16:45.278+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-1] c.d.o.d.i.c.metadata.NodeStateManager    : [s0] Transitioning Node(endPoint=/172.30.37.96:9042, hostId=null, hashCode=463b44c) UNKNOWN=>DOWN (because it was tried as a contact point but failed)
+2025-08-14T22:16:45.279+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-1] c.d.o.d.internal.core.context.EventBus   : [s0] Firing an instance of class com.datastax.oss.driver.internal.core.metadata.NodeStateEvent: NodeStateEvent(UNKNOWN=>DOWN, Node(endPoint=/172.30.37.96:9042, hostId=null, hashCode=463b44c))
+2025-08-14T22:16:45.279+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-1] c.d.o.d.internal.core.context.EventBus   : [s0] Notifying com.datastax.oss.driver.internal.core.util.concurrent.RunOrSchedule$$Lambda$1128/0x00000282bb4b5940@7e52a26b of NodeStateEvent(UNKNOWN=>DOWN, Node(endPoint=/172.30.37.96:9042, hostId=null, hashCode=463b44c))
+2025-08-14T22:16:45.279+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-1] c.d.o.d.internal.core.context.EventBus   : [s0] Notifying com.datastax.oss.driver.internal.core.util.concurrent.RunOrSchedule$$Lambda$1128/0x00000282bb4b5940@58a765ce of NodeStateEvent(UNKNOWN=>DOWN, Node(endPoint=/172.30.37.96:9042, hostId=null, hashCode=463b44c))
+2025-08-14T22:16:45.280+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-1] c.d.o.d.internal.core.context.EventBus   : [s0] Notifying com.datastax.oss.driver.internal.core.util.concurrent.RunOrSchedule$$Lambda$1128/0x00000282bb4b5940@6d0290d8 of NodeStateEvent(UNKNOWN=>DOWN, Node(endPoint=/172.30.37.96:9042, hostId=null, hashCode=463b44c))
+2025-08-14T22:16:45.281+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-1] c.d.o.d.internal.core.context.EventBus   : [s0] Notifying com.datastax.oss.driver.internal.core.metadata.LoadBalancingPolicyWrapper$$Lambda$1177/0x00000282bb51fb38@733d66f2 of NodeStateEvent(UNKNOWN=>DOWN, Node(endPoint=/172.30.37.96:9042, hostId=null, hashCode=463b44c))
+2025-08-14T22:16:45.289+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-1] c.d.o.d.i.core.session.DefaultSession    : [s0] Initialization failed, force closing
+
+java.util.concurrent.CompletionException: com.datastax.oss.driver.api.core.AllNodesFailedException: Could not reach any contact point, make sure you've provided valid addresses (showing first 1 nodes, use getAllErrors() for more): Node(endPoint=/172.30.37.96:9042, hostId=null, hashCode=463b44c): [com.datastax.oss.driver.api.core.connection.ConnectionInitException: [s0|control|connecting...] Protocol initialization request, step 1 (OPTIONS): failed to send request (java.nio.channels.NotYetConnectedException)]
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:347) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1141) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162) ~[na:na]
+	at com.datastax.oss.driver.internal.core.control.ControlConnection$SingleThreaded.lambda$init$3(ControlConnection.java:329) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at com.datastax.oss.driver.internal.core.control.ControlConnection$SingleThreaded.connect(ControlConnection.java:360) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at com.datastax.oss.driver.internal.core.control.ControlConnection$SingleThreaded.lambda$connect$8(ControlConnection.java:400) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at java.base/java.util.concurrent.CompletableFuture.uniWhenComplete(CompletableFuture.java:863) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:841) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[na:na]
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.channel.DefaultEventLoop.run(DefaultEventLoop.java:54) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: com.datastax.oss.driver.api.core.AllNodesFailedException: Could not reach any contact point, make sure you've provided valid addresses (showing first 1 nodes, use getAllErrors() for more): Node(endPoint=/172.30.37.96:9042, hostId=null, hashCode=463b44c): [com.datastax.oss.driver.api.core.connection.ConnectionInitException: [s0|control|connecting...] Protocol initialization request, step 1 (OPTIONS): failed to send request (java.nio.channels.NotYetConnectedException)]
+	at com.datastax.oss.driver.api.core.AllNodesFailedException.reword(AllNodesFailedException.java:149) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at com.datastax.oss.driver.internal.core.control.ControlConnection$SingleThreaded.lambda$init$3(ControlConnection.java:325) ~[java-driver-core-4.19.0.jar:4.19.0]
+	... 11 common frames omitted
+	Suppressed: com.datastax.oss.driver.api.core.connection.ConnectionInitException: [s0|control|connecting...] Protocol initialization request, step 1 (OPTIONS): failed to send request (java.nio.channels.NotYetConnectedException)
+		at com.datastax.oss.driver.internal.core.channel.ProtocolInitHandler$InitRequest.fail(ProtocolInitHandler.java:358) ~[java-driver-core-4.19.0.jar:4.19.0]
+		at com.datastax.oss.driver.internal.core.channel.ChannelHandlerRequest.writeListener(ChannelHandlerRequest.java:89) ~[java-driver-core-4.19.0.jar:4.19.0]
+		at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:603) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:570) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:505) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.addListener(DefaultPromise.java:198) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.channel.DefaultChannelPromise.addListener(DefaultChannelPromise.java:95) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.channel.DefaultChannelPromise.addListener(DefaultChannelPromise.java:30) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+		at com.datastax.oss.driver.internal.core.channel.ChannelHandlerRequest.send(ChannelHandlerRequest.java:78) ~[java-driver-core-4.19.0.jar:4.19.0]
+		at com.datastax.oss.driver.internal.core.channel.ProtocolInitHandler$InitRequest.send(ProtocolInitHandler.java:195) ~[java-driver-core-4.19.0.jar:4.19.0]
+		at com.datastax.oss.driver.internal.core.channel.ProtocolInitHandler.onRealConnect(ProtocolInitHandler.java:126) ~[java-driver-core-4.19.0.jar:4.19.0]
+		at com.datastax.oss.driver.internal.core.channel.ConnectInitHandler.lambda$connect$0(ConnectInitHandler.java:59) ~[java-driver-core-4.19.0.jar:4.19.0]
+		at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:603) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:596) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:572) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:505) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:649) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:642) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:131) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:264) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:156) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+		... 4 common frames omitted
+		Suppressed: io.netty.channel.ConnectTimeoutException: connection timed out after 5000 ms: /172.30.37.96:9042
+			at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:263)
+			... 10 common frames omitted
+	Caused by: java.nio.channels.NotYetConnectedException: null
+		at io.netty.channel.AbstractChannel$AbstractUnsafe.flush0(AbstractChannel.java:916)
+		at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.flush0(AbstractNioChannel.java:359)
+		at io.netty.channel.AbstractChannel$AbstractUnsafe.flush(AbstractChannel.java:893)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.flush(DefaultChannelPipeline.java:1319)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:935)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:921)
+		at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:907)
+		at io.netty.channel.ChannelDuplexHandler.flush(ChannelDuplexHandler.java:127)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:937)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeWriteAndFlush(AbstractChannelHandlerContext.java:957)
+		at io.netty.channel.AbstractChannelHandlerContext.write(AbstractChannelHandlerContext.java:982)
+		at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:950)
+		at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:1000)
+		at io.netty.channel.DefaultChannelPipeline.writeAndFlush(DefaultChannelPipeline.java:974)
+		at io.netty.channel.AbstractChannel.writeAndFlush(AbstractChannel.java:305)
+		at com.datastax.oss.driver.internal.core.channel.ChannelHandlerRequest.send(ChannelHandlerRequest.java:77)
+		... 21 common frames omitted
+
+2025-08-14T22:16:45.291+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-0] c.d.o.d.i.core.session.DefaultSession    : [s0] Starting forced shutdown (was not closed before)
+2025-08-14T22:16:45.296+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-1] c.d.o.d.i.core.session.PoolManager       : [s0] Starting forced shutdown (was not closed before)
+2025-08-14T22:16:45.297+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-0] c.d.o.d.i.core.metadata.MetadataManager  : [s0] Closing
+2025-08-14T22:16:45.298+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-1] c.d.o.d.i.c.control.ControlConnection    : [s0] Starting shutdown
+2025-08-14T22:16:45.299+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-1] c.d.o.d.i.c.control.ControlConnection    : [s0] Shutdown complete
+2025-08-14T22:16:45.300+05:30 DEBUG 17760 --- [ProductCrud] [s0-admin-1] c.d.o.d.i.core.session.PoolManager       : [s0] Shutdown complete
+2025-08-14T22:16:47.372+05:30 DEBUG 17760 --- [ProductCrud] [globalEventExecutor-1-3] c.d.o.d.i.core.session.DefaultSession    : Closing session s0 (0 live instances)
+2025-08-14T22:16:47.377+05:30  WARN 17760 --- [ProductCrud] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productController': Unsatisfied dependency expressed through field 'productService': Error creating bean with name 'productService': Unsatisfied dependency expressed through field 'productRepository': Error creating bean with name 'productRepository' defined in com.dhiraj.product.ProductCrud.repository.ProductRepository defined in @EnableCassandraRepositories declared on ProductCrudApplication: Cannot resolve reference to bean 'cassandraTemplate' while setting bean property 'cassandraTemplate'
+2025-08-14T22:16:47.383+05:30  INFO 17760 --- [ProductCrud] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-08-14T22:16:47.397+05:30  INFO 17760 --- [ProductCrud] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-08-14T22:16:47.434+05:30 ERROR 17760 --- [ProductCrud] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productController': Unsatisfied dependency expressed through field 'productService': Error creating bean with name 'productService': Unsatisfied dependency expressed through field 'productRepository': Error creating bean with name 'productRepository' defined in com.dhiraj.product.ProductCrud.repository.ProductRepository defined in @EnableCassandraRepositories declared on ProductCrudApplication: Cannot resolve reference to bean 'cassandraTemplate' while setting bean property 'cassandraTemplate'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1459) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1222) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1188) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1123) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.9.jar:6.2.9]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.9.jar:6.2.9]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.4.jar:3.5.4]
+	at com.dhiraj.product.ProductCrud.ProductCrudApplication.main(ProductCrudApplication.java:14) ~[main/:na]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productService': Unsatisfied dependency expressed through field 'productRepository': Error creating bean with name 'productRepository' defined in com.dhiraj.product.ProductCrud.repository.ProductRepository defined in @EnableCassandraRepositories declared on ProductCrudApplication: Cannot resolve reference to bean 'cassandraTemplate' while setting bean property 'cassandraTemplate'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1459) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1683) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785) ~[spring-beans-6.2.9.jar:6.2.9]
+	... 22 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'productRepository' defined in com.dhiraj.product.ProductCrud.repository.ProductRepository defined in @EnableCassandraRepositories declared on ProductCrudApplication: Cannot resolve reference to bean 'cassandraTemplate' while setting bean property 'cassandraTemplate'
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1725) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1474) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1683) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785) ~[spring-beans-6.2.9.jar:6.2.9]
+	... 35 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cassandraTemplate' defined in class path resource [org/springframework/boot/autoconfigure/data/cassandra/CassandraDataAutoConfiguration.class]: Unsatisfied dependency expressed through method 'cassandraTemplate' parameter 0: Error creating bean with name 'cqlTemplate' defined in class path resource [org/springframework/boot/autoconfigure/data/cassandra/CassandraDataAutoConfiguration.class]: Unsatisfied dependency expressed through method 'cqlTemplate' parameter 0: Error creating bean with name 'cassandraSessionFactory' defined in class path resource [org/springframework/boot/autoconfigure/data/cassandra/CassandraDataAutoConfiguration.class]: Error creating bean with name 'cassandraSession' defined in class path resource [org/springframework/boot/autoconfigure/cassandra/CassandraAutoConfiguration.class]: Failed to instantiate [com.datastax.oss.driver.api.core.CqlSession]: Factory method 'cassandraSession' threw exception with message: Could not reach any contact point, make sure you've provided valid addresses (showing first 1 nodes, use getAllErrors() for more): Node(endPoint=/172.30.37.96:9042, hostId=null, hashCode=463b44c): [com.datastax.oss.driver.api.core.connection.ConnectionInitException: [s0|control|connecting...] Protocol initialization request, step 1 (OPTIONS): failed to send request (java.nio.channels.NotYetConnectedException)]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365) ~[spring-beans-6.2.9.jar:6.2.9]
+	... 47 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cqlTemplate' defined in class path resource [org/springframework/boot/autoconfigure/data/cassandra/CassandraDataAutoConfiguration.class]: Unsatisfied dependency expressed through method 'cqlTemplate' parameter 0: Error creating bean with name 'cassandraSessionFactory' defined in class path resource [org/springframework/boot/autoconfigure/data/cassandra/CassandraDataAutoConfiguration.class]: Error creating bean with name 'cassandraSession' defined in class path resource [org/springframework/boot/autoconfigure/cassandra/CassandraAutoConfiguration.class]: Failed to instantiate [com.datastax.oss.driver.api.core.CqlSession]: Factory method 'cassandraSession' threw exception with message: Could not reach any contact point, make sure you've provided valid addresses (showing first 1 nodes, use getAllErrors() for more): Node(endPoint=/172.30.37.96:9042, hostId=null, hashCode=463b44c): [com.datastax.oss.driver.api.core.connection.ConnectionInitException: [s0|control|connecting...] Protocol initialization request, step 1 (OPTIONS): failed to send request (java.nio.channels.NotYetConnectedException)]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1683) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.9.jar:6.2.9]
+	... 57 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cassandraSessionFactory' defined in class path resource [org/springframework/boot/autoconfigure/data/cassandra/CassandraDataAutoConfiguration.class]: Error creating bean with name 'cassandraSession' defined in class path resource [org/springframework/boot/autoconfigure/cassandra/CassandraAutoConfiguration.class]: Failed to instantiate [com.datastax.oss.driver.api.core.CqlSession]: Factory method 'cassandraSession' threw exception with message: Could not reach any contact point, make sure you've provided valid addresses (showing first 1 nodes, use getAllErrors() for more): Node(endPoint=/172.30.37.96:9042, hostId=null, hashCode=463b44c): [com.datastax.oss.driver.api.core.connection.ConnectionInitException: [s0|control|connecting...] Protocol initialization request, step 1 (OPTIONS): failed to send request (java.nio.channels.NotYetConnectedException)]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1745) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.9.jar:6.2.9]
+	... 70 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cassandraSession' defined in class path resource [org/springframework/boot/autoconfigure/cassandra/CassandraAutoConfiguration.class]: Failed to instantiate [com.datastax.oss.driver.api.core.CqlSession]: Factory method 'cassandraSession' threw exception with message: Could not reach any contact point, make sure you've provided valid addresses (showing first 1 nodes, use getAllErrors() for more): Node(endPoint=/172.30.37.96:9042, hostId=null, hashCode=463b44c): [com.datastax.oss.driver.api.core.connection.ConnectionInitException: [s0|control|connecting...] Protocol initialization request, step 1 (OPTIONS): failed to send request (java.nio.channels.NotYetConnectedException)]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1745) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.context.annotation.ContextAnnotationAutowireCandidateResolver$LazyDependencyTargetSource.getTarget(ContextAnnotationAutowireCandidateResolver.java:141) ~[spring-context-6.2.9.jar:6.2.9]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:203) ~[spring-aop-6.2.9.jar:6.2.9]
+	at jdk.proxy2/jdk.proxy2.$Proxy59.getContext(Unknown Source) ~[na:na]
+	at org.springframework.boot.autoconfigure.data.cassandra.CassandraDataAutoConfiguration.lambda$cassandraConverter$0(CassandraDataAutoConfiguration.java:102) ~[spring-boot-autoconfigure-3.5.4.jar:3.5.4]
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:135) ~[spring-data-commons-3.5.2.jar:3.5.2]
+	at org.springframework.data.util.Lazy.get(Lazy.java:113) ~[spring-data-commons-3.5.2.jar:3.5.2]
+	at org.springframework.data.cassandra.core.convert.MappingCassandraConverter.getCodecRegistry(MappingCassandraConverter.java:278) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.convert.DefaultColumnTypeResolver.getCodecRegistry(DefaultColumnTypeResolver.java:496) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.convert.DefaultColumnTypeResolver.tryResolve(DefaultColumnTypeResolver.java:249) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.convert.DefaultColumnTypeResolver.createCassandraTypeDescriptor(DefaultColumnTypeResolver.java:477) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.convert.DefaultColumnTypeResolver.lambda$resolve$1(DefaultColumnTypeResolver.java:230) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at java.base/java.util.Optional.orElseGet(Optional.java:364) ~[na:na]
+	at org.springframework.data.cassandra.core.convert.DefaultColumnTypeResolver.resolve(DefaultColumnTypeResolver.java:229) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.convert.DefaultColumnTypeResolver.doResolve(DefaultColumnTypeResolver.java:175) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.convert.DefaultColumnTypeResolver.resolve(DefaultColumnTypeResolver.java:112) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.convert.SchemaFactory.getDataType(SchemaFactory.java:199) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.convert.SchemaFactory.getCreateTableSpecificationFor(SchemaFactory.java:175) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.convert.SchemaFactory.getCreateTableSpecificationFor(SchemaFactory.java:127) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.CassandraPersistentEntitySchemaCreator.lambda$createTableSpecifications$1(CassandraPersistentEntitySchemaCreator.java:112) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.concurrent.ConcurrentHashMap$KeySpliterator.forEachRemaining(ConcurrentHashMap.java:3573) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682) ~[na:na]
+	at org.springframework.data.cassandra.core.CassandraPersistentEntitySchemaCreator.createTableSpecifications(CassandraPersistentEntitySchemaCreator.java:114) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.core.CassandraPersistentEntitySchemaCreator.createTables(CassandraPersistentEntitySchemaCreator.java:97) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.config.SessionFactoryFactoryBean.performSchemaActions(SessionFactoryFactoryBean.java:267) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.config.SessionFactoryFactoryBean.createTables(SessionFactoryFactoryBean.java:238) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.config.SessionFactoryFactoryBean.performSchemaAction(SessionFactoryFactoryBean.java:224) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.config.SessionFactoryFactoryBean.lambda$afterPropertiesSet$0(SessionFactoryFactoryBean.java:157) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.config.SchemaUtils.withAsyncSchemaRefresh(SchemaUtils.java:96) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.config.SchemaUtils.withSchemaRefresh(SchemaUtils.java:84) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.data.cassandra.config.SessionFactoryFactoryBean.afterPropertiesSet(SessionFactoryFactoryBean.java:163) ~[spring-data-cassandra-4.5.2.jar:4.5.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.9.jar:6.2.9]
+	... 81 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.datastax.oss.driver.api.core.CqlSession]: Factory method 'cassandraSession' threw exception with message: Could not reach any contact point, make sure you've provided valid addresses (showing first 1 nodes, use getAllErrors() for more): Node(endPoint=/172.30.37.96:9042, hostId=null, hashCode=463b44c): [com.datastax.oss.driver.api.core.connection.ConnectionInitException: [s0|control|connecting...] Protocol initialization request, step 1 (OPTIONS): failed to send request (java.nio.channels.NotYetConnectedException)]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:200) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:89) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:169) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.9.jar:6.2.9]
+	... 129 common frames omitted
+Caused by: com.datastax.oss.driver.api.core.AllNodesFailedException: Could not reach any contact point, make sure you've provided valid addresses (showing first 1 nodes, use getAllErrors() for more): Node(endPoint=/172.30.37.96:9042, hostId=null, hashCode=463b44c): [com.datastax.oss.driver.api.core.connection.ConnectionInitException: [s0|control|connecting...] Protocol initialization request, step 1 (OPTIONS): failed to send request (java.nio.channels.NotYetConnectedException)]
+	at com.datastax.oss.driver.api.core.AllNodesFailedException.copy(AllNodesFailedException.java:143) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:154) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at com.datastax.oss.driver.api.core.session.SessionBuilder.build(SessionBuilder.java:837) ~[java-driver-core-4.19.0.jar:4.19.0]
+	at org.springframework.boot.autoconfigure.cassandra.CassandraAutoConfiguration.cassandraSession(CassandraAutoConfiguration.java:107) ~[spring-boot-autoconfigure-3.5.4.jar:3.5.4]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:172) ~[spring-beans-6.2.9.jar:6.2.9]
+	... 132 common frames omitted
+	Suppressed: com.datastax.oss.driver.api.core.connection.ConnectionInitException: [s0|control|connecting...] Protocol initialization request, step 1 (OPTIONS): failed to send request (java.nio.channels.NotYetConnectedException)
+		at com.datastax.oss.driver.internal.core.channel.ProtocolInitHandler$InitRequest.fail(ProtocolInitHandler.java:358) ~[java-driver-core-4.19.0.jar:4.19.0]
+		at com.datastax.oss.driver.internal.core.channel.ChannelHandlerRequest.writeListener(ChannelHandlerRequest.java:89) ~[java-driver-core-4.19.0.jar:4.19.0]
+		at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:603) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:570) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:505) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.addListener(DefaultPromise.java:198) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.channel.DefaultChannelPromise.addListener(DefaultChannelPromise.java:95) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.channel.DefaultChannelPromise.addListener(DefaultChannelPromise.java:30) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+		at com.datastax.oss.driver.internal.core.channel.ChannelHandlerRequest.send(ChannelHandlerRequest.java:78) ~[java-driver-core-4.19.0.jar:4.19.0]
+		at com.datastax.oss.driver.internal.core.channel.ProtocolInitHandler$InitRequest.send(ProtocolInitHandler.java:195) ~[java-driver-core-4.19.0.jar:4.19.0]
+		at com.datastax.oss.driver.internal.core.channel.ProtocolInitHandler.onRealConnect(ProtocolInitHandler.java:126) ~[java-driver-core-4.19.0.jar:4.19.0]
+		at com.datastax.oss.driver.internal.core.channel.ConnectInitHandler.lambda$connect$0(ConnectInitHandler.java:59) ~[java-driver-core-4.19.0.jar:4.19.0]
+		at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:603) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:596) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:572) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:505) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:649) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:642) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:131) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:264) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:156) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+		Suppressed: io.netty.channel.ConnectTimeoutException: connection timed out after 5000 ms: /172.30.37.96:9042
+			at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:263)
+			... 10 common frames omitted
+	Caused by: java.nio.channels.NotYetConnectedException: null
+		at io.netty.channel.AbstractChannel$AbstractUnsafe.flush0(AbstractChannel.java:916)
+		at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.flush0(AbstractNioChannel.java:359)
+		at io.netty.channel.AbstractChannel$AbstractUnsafe.flush(AbstractChannel.java:893)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.flush(DefaultChannelPipeline.java:1319)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:935)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:921)
+		at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:907)
+		at io.netty.channel.ChannelDuplexHandler.flush(ChannelDuplexHandler.java:127)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:937)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeWriteAndFlush(AbstractChannelHandlerContext.java:957)
+		at io.netty.channel.AbstractChannelHandlerContext.write(AbstractChannelHandlerContext.java:982)
+		at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:950)
+		at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:1000)
+		at io.netty.channel.DefaultChannelPipeline.writeAndFlush(DefaultChannelPipeline.java:974)
+		at io.netty.channel.AbstractChannel.writeAndFlush(AbstractChannel.java:305)
+		at com.datastax.oss.driver.internal.core.channel.ChannelHandlerRequest.send(ChannelHandlerRequest.java:77)
+		... 21 common frames omitted
+
