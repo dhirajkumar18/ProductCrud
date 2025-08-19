@@ -1,29 +1,29 @@
 package com.dhiraj.product.ProductCrud.entity;
 
-import jakarta.persistence.*;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
+import org.springframework.data.cassandra.core.mapping.Table;
 
 import java.util.UUID;
-@Entity
-@Table(name="product")
-public class Product {
-    @Id
-    private String id;
+
+@Table("product")
+public class Product1 {
+    @PrimaryKey
+    private UUID id;
     private String name;
     private double price;
-    public Product(){}
+    public Product1(){}
 
-    public Product(String id, String name, double price) {
+    public Product1(UUID id, String name, double price) {
         this.id = id;
         this.name = name;
         this.price = price;
     }
 
-    public String getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
