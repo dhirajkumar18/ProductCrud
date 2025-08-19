@@ -27,4 +27,9 @@ public class ProductController {
     public ResponseEntity<String> deleteProductById(@PathVariable String id){
         return new ResponseEntity<>(productService.deleteProductById(id),HttpStatus.OK);
     }
+    @PutMapping("/products/{id}")
+    public ResponseEntity<Product> updateProudct(@RequestBody Product product,@PathVariable String id){
+        return new ResponseEntity<>(productService.updateProduct(product,id),HttpStatus.OK);
+    }
+
 }

@@ -24,4 +24,11 @@ public class ProductService {
         productRepository.deleteById(id);
         return "product deleted";
     }
+    public Product updateProduct(Product product,String id){
+        Product productObj=productRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("product not found with given id"+id));
+        productObj.setName(product.getName());
+        productObj.setPrice(product.getPrice());
+        return productRepository.save(productObj);
+    }
 }
