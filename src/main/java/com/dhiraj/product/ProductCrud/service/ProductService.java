@@ -20,4 +20,8 @@ public class ProductService {
     public List<Product> getAllProducts(){
         return productRepository.findAll();
     }
+    public String deleteProductById(String id){
+        productRepository.deleteById(id);
+        return "product deleted";
+    }
 }
